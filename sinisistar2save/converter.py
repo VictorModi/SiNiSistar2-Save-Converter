@@ -12,8 +12,6 @@ class SiNiSiStar2Save:
     @staticmethod
     def parse(data: str) -> "SiNiSiStar2Save":
         data_lines = data.splitlines()
-        print(len(data_lines))
-        print(data_lines[0])
         json_data = json.loads(base64.b64decode(data_lines[0])[::-1].decode("utf-8", "ignore"))
         image_data = base64.b64decode(data_lines[1]) if len(data_lines) > 1 else None
         return SiNiSiStar2Save(json_data, image_data)
