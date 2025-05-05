@@ -11,12 +11,13 @@ SAVE_FOLDER: Final[str] = os.path.join(
 TARGET_SAVE_FILE: Final[str] = os.path.join(SAVE_FOLDER, "FileAuto")
 
 
-class SaveDecodeTest(unittest.TestCase):
-    def test_save_decode(self):
+class SaveDecodeAndEncode(unittest.TestCase):
+    def test_save_decode_and_encode(self):
         with open(TARGET_SAVE_FILE, 'r', encoding="utf-8-sig") as file:
             data = file.read()
         save = SiNiSiStar2Save.parse(data)
-        print(save)
-        self.assertIsNotNone(save)
-        self.assertIsInstance(save.data, dict)
-        self.assertIsInstance(save.image, (bytes, type(None)))
+        re_encoded = save.encode()
+        re_decoded = SiNiSiStar2Save.parse(re_encoded)
+
+        self.assertEqual(save.data, re_decoded.data)
+        self.assertEqual(save.image, re_decoded.image)
