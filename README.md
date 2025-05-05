@@ -13,13 +13,13 @@ A lightweight Python utility to parse and encode save files from *SiNiSiStar 2*.
 You can install this tool directly via Git:
 
 ```bash
-pip install git+https://github.com/VictorModi/SiNiSiStar2Save.git
+pip install git+https://github.com/VictorModi/SiNiSistar2-Save-Converter.git
 ```
 
 Or clone manually:
 ```bash
-git clone https://github.com/VictorModi/SiNiSiStar2Save.git
-cd SiNiSiStar2Save
+git clone https://github.com/VictorModi/SiNiSistar2-Save-Converter.git
+cd SiNiSistar2-Save-Converter
 ```
 
 ## Usage Example
